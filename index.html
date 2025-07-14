@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <title>Portafolio</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="text-light px-6 py-4 flex justify-between items-center shadow-md bg-[#1c2433] text-white">
+        <!-- Logo -->
+        <!-- <div class="text-xl font-bold tracking-wide">
+            <a href="#" class="hover:text-highlight transition duration-300">CheSebas</a>
+        </div> -->
+        <!-- Logo SVG -->
+        <a href="#" class="w-10 h-10 block transition-all duration-300 hover:drop-shadow-[0_0_10px_#3390FF]" role="img" aria-label="Logo SA"> 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="w-full h-full">
+                <title>Logo SA</title>
+                <text x="5" y="35" font-family="Arial, sans-serif" font-size="36" fill="#3390FF">S</text>
+                <text x="25" y="35" font-family="Arial, sans-serif" font-size="36" fill="#CCE1FF">A</text>
+            </svg>
+        </a>
+
+
+
+
+        <!-- Menú de navegación -->
+        <nav class="hidden md:flex space-x-8 text-softGray font-medium">
+            <a href="#inicio" class="px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight">Inicio</a>
+            <a href="#habilidades" class="px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight">Habilidades</a>
+            <a href="#proyectos" class="px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight">Proyectos</a>
+            <a href="#contacto" class="px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight">Contacto</a>
+        </nav>
+
+        <!-- Botón de contacto -->
+        <a href="#contacto" class="px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight">
+            <i class="fas fa-user"></i>
+            Contacto
+        </a>
+    </header>
+
+    
+    <!-- Hero -->
+    <section id="inicio" class="bg-gradient-main text-light py-16 px-6 md:px-12 flex flex-col-reverse md:flex-row items-center justify-between gap-8 bg-[#233750]">
+        <!-- Elementos decorativos opcionales -->
+        <!-- <div class="absolute top-4 left-4 w-12 h-12 bg-neonGreen rounded-full opacity-20 blur-xl"></div>
+        <div class="absolute bottom-6 right-6 w-16 h-16 bg-highlight rounded-full opacity-10 blur-xl"></div> -->
+        
+        <!-- Texto -->
+        <div class="flex-1 text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">
+                Hola, soy <span class="text-highlight">Sebastián Alagón</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-semibold text-softGray mb-6 text-white">
+            Desarrollador Full Stack
+            </h2>
+            <!-- <a href="#proyectos" class="inline-block bg-highlight text-dark px-6 py-3 rounded-full font-semibold hover:bg-neonGreen transition duration-300">
+            Ver Proyectos
+            </a> -->
+            <button class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out">
+                <slot part="content">Ver Proyectos</slot>
+            </button>
+        </div>
+
+        <!-- Imagen -->
+        <div class="flex-1 flex justify-center">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQFSRHNYRVC24A/profile-displayphoto-scale_200_200/B4DZfIDv_JGsAc-/0/1751408116619?e=1756944000&v=beta&t=u6jozZJdpsKDjMr8qqDrQOHAPQ4KfERwO03Y7J-kNYU" alt="Foto de Sebastián" class="w-64 h-64 rounded-full shadow-lg object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+
+    </section>
+
+    <!-- Sobre Mi -->
+    <section id="sobremi" class="bg-dark text-light py-20 px-6 md:px-12 text-center relative bg-[#233750]">
+        <!-- División entre secciones -->
+        <div class="w-full py-6 flex justify-center bg-[#233750]">
+            <img src="https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/blt58a347b3c468dc62/6614a5791b4724c4502d764e/section_divider_desktop_1.webp?auto=webp" alt="División decorativa" class="w-full h-auto transition-transform duration-500 hover:scale-105">
+        </div>
+        
+        <!-- Elementos decorativos opcionales -->
+        <div class="absolute top-4 left-4 w-12 h-12 bg-neonGreen rounded-full opacity-20 blur-xl"></div>
+        <div class="absolute bottom-6 right-6 w-16 h-16 bg-highlight rounded-full opacity-10 blur-xl"></div>
+
+        <!-- Contenido principal -->
+        <h2 class="text-4xl md:text-5xl font-bold text-highlight mb-6 text-white">¿Quién Soy?</h2>
+        <p class="text-softGray max-w-3xl mx-auto text-lg leading-relaxed text-[#CCE6FF]">
+            Soy un desarrollador Full Stack apasionado por crear aplicaciones web modernas, intuitivas y funcionales.
+            Disfruto resolver problemas con código limpio y eficiente. Me especializo en tecnologías como <span class="text-light font-medium">JavaScript, React, Node.js y TailwindCSS</span>.
+            En mi tiempo libre, me gusta jugar videojuegos, aprender nuevas herramientas y leer sobre desarrollo personal y tecnología.
+        </p>
+
+        <!-- Botón -->
+        <div class="mt-8">
+            <!-- <a href="#proyectos" class="inline-block bg-highlight text-dark px-6 py-3 rounded-full font-semibold hover:bg-neonGreen transition duration-300">
+            Ver mis proyectos
+            </a> -->
+            <button class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out">
+                <slot part="content">Ver mis Proyectos</slot>
+            </button>
+        </div>
+
+        <!-- División entre secciones -->
+        <div class="w-full py-6 flex justify-center bg-[#233750]">
+            <img src="https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/bltc4f8f0164464b51a/6614a5792829dd1383e9d163/section_divider_desktop_2.webp?auto=webp" alt="División decorativa" class="w-full h-auto transition-transform duration-500 hover:scale-105">
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="bg-deepBlue text-light py-20 px-6 md:px-12 text-center bg-[#233750]">
+        <h2 class="text-4xl md:text-5xl font-bold text-highlight mb-12 text-white">Habilidades</h2>
+
+        <!-- Contenedor de íconos -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 max-w-5xl mx-auto text-[#7AA3CD]">
+            <!-- HTML -->
+            <div class="flex flex-col items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-16 h-16 mb-2" alt="HTML">
+            <span class="text-softGray font-medium">HTML5</span>
+            </div>
+            <!-- CSS -->
+            <div class="flex flex-col items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-16 h-16 mb-2" alt="CSS">
+            <span class="text-softGray font-medium">CSS3</span>
+            </div>
+            <!-- JavaScript -->
+            <div class="flex flex-col items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-16 h-16 mb-2" alt="JavaScript">
+            <span class="text-softGray font-medium">JavaScript</span>
+            </div>
+            <!-- Tailwind -->
+            <div class="flex flex-col items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" class="w-16 h-16 mb-2" alt="TailwindCSS">
+            <span class="text-softGray font-medium">TailwindCSS</span>
+            </div>
+            <!-- React -->
+            <div class="flex flex-col items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-16 h-16 mb-2" alt="React">
+            <span class="text-softGray font-medium">React</span>
+            </div>
+            <!-- Node.js -->
+            <div class="flex flex-col items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-16 h-16 mb-2" alt="Node.js">
+            <span class="text-softGray font-medium">Node.js</span>
+            </div>
+            <!-- Git -->
+            <div class="flex flex-col items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-16 h-16 mb-2" alt="Git">
+            <span class="text-softGray font-medium">Git</span>
+            </div>
+            <!-- GitHub -->
+            <div class="flex flex-col items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-16 h-16 mb-2 invert" alt="GitHub">
+            <span class="text-softGray font-medium">GitHub</span>
+            </div>
+        </div>
+
+        <!-- Botón de CV -->
+        <div class="mt-12">
+            <!-- <a href="tu-cv.pdf" download class="inline-block bg-highlight text-dark px-6 py-3 rounded-full font-semibold hover:bg-neonGreen transition duration-300">
+            Descargar CV
+            </a> -->
+            <button class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out">
+                <slot part="content">Descargar CV</slot>
+            </button>
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="bg-dark text-light py-20 px-6 md:px-12 text-center bg-[#233750]">
+        <!-- División entre secciones -->
+        <div class="w-full py-6 flex justify-center bg-[#233750]">
+            <img src="https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/blt58a347b3c468dc62/6614a5791b4724c4502d764e/section_divider_desktop_1.webp?auto=webp" alt="División decorativa" class="w-full h-auto transition-transform duration-500 hover:scale-105">
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-bold text-highlight mb-12 text-white">Proyectos Destacados</h2>
+
+        <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+            <!-- Proyecto 1 -->
+            <div class="bg-deepBlue rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+            <img src="https://via.placeholder.com/400x200" alt="Proyecto 1" class="w-full h-48 object-cover">
+            <div class="p-4 text-left">
+                <h3 class="text-xl font-semibold text-highlight mb-2 text-white">Portafolio Personal</h3>
+                <p class="text-softGray mb-4 text-[#CCE6FF]">Diseño moderno para presentar mis habilidades y proyectos.</p>
+                <a href="https://github.com/tuusuario/portafolio" target="_blank" class="text-neonGreen font-semibold hover:underline text-[#7AA3CD]">Ver en GitHub</a>
+            </div>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="bg-deepBlue rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+            <img src="https://via.placeholder.com/400x200" alt="Proyecto 2" class="w-full h-48 object-cover">
+            <div class="p-4 text-left">
+                <h3 class="text-xl font-semibold text-highlight mb-2 text-white">App de Tareas</h3>
+                <p class="text-softGray mb-4 text-[#CCE6FF]">CRUD completo con autenticación y base de datos.</p>
+                <a href="https://github.com/tuusuario/todo-app" target="_blank" class="text-neonGreen font-semibold hover:underline text-[#7AA3CD]">Ver en GitHub</a>
+            </div>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="bg-deepBlue rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+            <img src="https://via.placeholder.com/400x200" alt="Proyecto 3" class="w-full h-48 object-cover">
+            <div class="p-4 text-left">
+                <h3 class="text-xl font-semibold text-highlight mb-2 text-white">API REST con Node.js</h3>
+                <p class="text-softGray mb-4 text-[#CCE6FF]">Desarrollo de una API RESTful utilizando Express y MongoDB.</p>
+                <a href="https://github.com/tuusuario/api-node" target="_blank" class="text-neonGreen font-semibold hover:underline text-[#7AA3CD]">Ver en GitHub</a>
+            </div>
+            </div>
+        </div>
+
+        <!-- División entre secciones -->
+        <div class="w-full py-6 flex justify-center bg-[#233750]">
+            <img src="https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/bltc4f8f0164464b51a/6614a5792829dd1383e9d163/section_divider_desktop_2.webp?auto=webp" alt="División decorativa" class="w-full h-auto transition-transform duration-500 hover:scale-105">
+        </div>
+    </section>
+
+    <!-- Formulario de Proyectos -->
+    <section id="contacto" class="bg-deepBlue text-light py-20 px-6 md:px-12 bg-[#233750]">
+        <h2 class="text-4xl md:text-5xl font-bold text-highlight text-center mb-12 text-white">Contáctame</h2>
+
+        <form action="#" method="POST" class="max-w-2xl mx-auto space-y-6 bg-dark p-8 rounded-xl shadow-lg">
+            <!-- Nombre -->
+            <div class="flex flex-col">
+            <label for="nombre" class="mb-2 text-softGray text-sm font-medium text-[#CCE6FF]">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required
+                class="px-4 py-3 bg-deepBlue border border-white rounded-md text-light focus:outline-none focus:ring-2 focus:ring-highlight" />
+            </div>
+
+            <!-- Correo -->
+            <div class="flex flex-col">
+            <label for="correo" class="mb-2 text-softGray text-sm font-medium text-[#CCE6FF]">Correo Electrónico</label>
+            <input type="email" id="correo" name="correo" required
+                class="px-4 py-3 bg-deepBlue border border-white rounded-md text-light focus:outline-none focus:ring-2 focus:ring-highlight" />
+            </div>
+
+            <!-- Mensaje -->
+            <div class="flex flex-col">
+            <label for="mensaje" class="mb-2 text-softGray text-sm font-medium text-[#CCE6FF]">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required
+                class="px-4 py-3 bg-deepBlue border border-white rounded-md text-light resize-none focus:outline-none focus:ring-2 focus:ring-highlight"></textarea>
+            </div>
+
+            <!-- Botón -->
+            <div class="text-center">
+                <!-- <button type="submit"
+                    class="bg-highlight text-dark px-8 py-3 rounded-full font-semibold hover:bg-neonGreen transition duration-300">
+                    Enviar Mensaje
+                </button> -->
+                <button class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out">
+                    <slot part="content">Enviar Mensaje</slot>
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deepBlue text-softGray py-6 px-6 md:px-12 bg-[#010E1E]">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-white">
+            <!-- Texto -->
+            <p class="text-center md:text-left text-sm">
+                2025 Sebastián Alagón. Todos los derechos reservados.
+            </p>
+
+            <!-- Redes Sociales -->
+            <div class="flex space-x-4">
+            <a href="https://github.com/tuusuario" target="_blank" class="hover:text-highlight transition">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path
+                    d="M12 .5C5.73.5.5 5.73.5 12.02c0 5.1 3.29 9.42 7.86 10.96.58.1.79-.25.79-.56v-2.2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.3-1.27-1.65-1.27-1.65-1.04-.7.08-.68.08-.68 1.15.08 1.76 1.18 1.76 1.18 1.02 1.74 2.68 1.24 3.34.94.1-.74.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.25.45-2.28 1.17-3.08-.12-.3-.5-1.52.1-3.17 0 0 .97-.3 3.18 1.17a10.9 10.9 0 012.9-.4c.98 0 1.97.13 2.9.4 2.2-1.47 3.18-1.17 3.18-1.17.6 1.65.22 2.87.1 3.17.73.8 1.17 1.83 1.17 3.08 0 4.43-2.7 5.41-5.28 5.7.41.35.77 1.04.77 2.1v3.11c0 .31.21.66.8.55A10.5 10.5 0 0023.5 12C23.5 5.73 18.27.5 12 .5z" />
+                </svg>
+            </a>
+            <a href="https://linkedin.com/in/tuusuario" target="_blank" class="hover:text-highlight transition">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path
+                    d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11.5 19h-3v-10h3v10zm-1.5-11.29c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13 11.29h-3v-5.5c0-1.1-.9-2-2-2s-2 .9-2 2v5.5h-3v-10h3v1.4c.41-.58 1.1-.9 1.83-.9 1.67 0 3.17 1.5 3.17 3.33v6.17z" />
+                </svg>
+            </a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
