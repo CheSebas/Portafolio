@@ -1,15 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/output.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/output.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="skills.js" defer></script>
+    <script src="main.js" defer></script>
     <title>Portafolio</title>
 
     <!-- Estilo para Imagen de Perfil -->
     <style>
-        .imagen-con-borde::after {
+      .imagen-con-borde::after {
         content: "";
         position: absolute;
         inset: 0;
@@ -18,302 +23,483 @@
         border-radius: 9999px;
 
         box-shadow:
-            0px 0px 10px 10px rgba(0, 102, 204, 0.14) inset,
-            0px 0px 50px 45px rgba(0, 102, 204, 0.14) inset,
-            0px 0px 0px 2px rgba(153, 204, 255, 0.2) inset;
-        }
+          0px 0px 10px 10px rgba(0, 102, 204, 0.14) inset,
+          0px 0px 50px 45px rgba(0, 102, 204, 0.14) inset,
+          0px 0px 0px 2px rgba(153, 204, 255, 0.2) inset;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-dark text-light px-6 py-4 flex justify-between items-center shadow-md bg-[#202020] text-white">
-        <!-- Logo -->
-        <!-- <div class="text-xl font-bold tracking-wide">
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-dark text-light px-6 py-4 flex justify-between items-center shadow-md bg-[#202020] text-white"
+    >
+      <!-- Logo -->
+      <!-- <div class="text-xl font-bold tracking-wide">
             <a href="#" class="hover:text-highlight transition duration-300">CheSebas</a>
         </div> -->
-        <!-- Logo SVG -->
-        <a href="" class="w-10 h-10 block transition-all duration-300 hover:drop-shadow-[0_0_10px_#3390FF]" role="img" aria-label="Logo SA"> 
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="w-full h-full">
-                <!-- <title>Logo SA</title> -->
-                <text x="5" y="35" font-family="Arial, sans-serif" font-size="36" fill="#3390FF">S</text>
-                <text x="25" y="35" font-family="Arial, sans-serif" font-size="36" fill="#CCE1FF">A</text>
-            </svg>
-        </a>
+      <!-- Logo SVG -->
+      <a
+        href=""
+        class="w-10 h-10 block transition-all duration-300 hover:drop-shadow-[0_0_10px_#3390FF]"
+        role="img"
+        aria-label="Logo SA"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 50 50"
+          class="w-full h-full"
+        >
+          <!-- <title>Logo SA</title> -->
+          <text
+            x="5"
+            y="35"
+            font-family="Arial, sans-serif"
+            font-size="36"
+            fill="#3390FF"
+          >
+            S
+          </text>
+          <text
+            x="25"
+            y="35"
+            font-family="Arial, sans-serif"
+            font-size="36"
+            fill="#CCE1FF"
+          >
+            A
+          </text>
+        </svg>
+      </a>
 
-        <!-- Botón menú movil -->
-        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none">
-            <i class="fas fa-bars"></i>
-        </button>
+      <!-- Botón menú movil -->
+      <button
+        id="menu-toggle"
+        class="md:hidden text-white text-2xl focus:outline-none"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
 
-        <!-- Menú de navegación -->
-        <nav class="hidden md:flex space-x-8 text-softGray font-medium">
-            <a href="#inicio" class="px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight">Inicio</a>
-            <a href="#habilidades" class="px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight">Habilidades</a>
-            <a href="#proyectos" class="px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight">Proyectos</a>
-            <a href="#contacto" class="px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight">Contacto</a>
-        </nav>
-                
-        <!-- Menú móvil -->
-        <nav id="mobile-menu" class="md:hidden hidden flex-col bg-dark text-white px-6 py-4 space-y-4 absolute top-full left-0 w-full shadow-md z-40 bg-[#202020]">
-            <a href="#inicio" class="block px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight">Inicio</a>
-            <a href="#habilidades" class="block px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight">Habilidades</a>
-            <a href="#proyectos" class="block px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight">Proyectos</a>
-            <a href="#contacto" class="block px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight">Contacto</a>
-        </nav>
+      <!-- Menú de navegación -->
+      <nav class="hidden md:flex space-x-8 text-softGray font-medium">
+        <a
+          href="#inicio"
+          class="px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight"
+          >Inicio</a
+        >
+        <a
+          href="#habilidades"
+          class="px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight"
+          >Habilidades</a
+        >
+        <a
+          href="#proyectos"
+          class="px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight"
+          >Proyectos</a
+        >
+        <a
+          href="#contacto"
+          class="px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight"
+          >Contacto</a
+        >
+      </nav>
 
-        <!-- Botón de contacto -->
-        <a href="https://wa.me/51918702530" class="px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight">
-            <i class="fas fa-user"></i>
-            Contacto
-        </a>
+      <!-- Menú móvil -->
+      <nav
+        id="mobile-menu"
+        class="md:hidden hidden flex-col bg-dark text-white px-6 py-4 space-y-4 absolute top-full left-0 w-full shadow-md z-40 bg-[#202020]"
+      >
+        <a
+          href="#inicio"
+          class="block px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight"
+          >Inicio</a
+        >
+        <a
+          href="#habilidades"
+          class="block px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight"
+          >Habilidades</a
+        >
+        <a
+          href="#proyectos"
+          class="block px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight"
+          >Proyectos</a
+        >
+        <a
+          href="#contacto"
+          class="block px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight"
+          >Contacto</a
+        >
+      </nav>
 
-        <!-- Borde inferior del header -->
-        <div class="absolute bottom-0 left-0 w-full">
-            <img src="https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/blt83b52952c704ce74/657ee15c21f66050c9478884/section_divider.webp?auto=webp"
-            alt=""
-            class="w-full h-[16px] object-cover pointer-events-none select-none">
-        </div>
+      <!-- Botón de contacto -->
+      <a
+        href="https://wa.me/51918702530"
+        class="px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight"
+      >
+        <i class="fas fa-user"></i>
+        Contacto
+      </a>
 
+      <!-- Borde inferior del header -->
+      <div class="absolute bottom-0 left-0 w-full">
+        <img
+          src="https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/blt83b52952c704ce74/657ee15c21f66050c9478884/section_divider.webp?auto=webp"
+          alt=""
+          class="w-full h-[16px] object-cover pointer-events-none select-none"
+        />
+      </div>
     </header>
 
     <!-- Hero -->
-    <section id="inicio" class="pt-24 bg-gradient-main text-light py-16 px-6 md:px-12 flex flex-col-reverse md:flex-row items-center justify-between gap-8 bg-[#233750]">
-        <!-- Elementos decorativos opcionales -->
-        <!-- <div class="absolute top-4 left-4 w-12 h-12 bg-neonGreen rounded-full opacity-20 blur-xl"></div>
+    <section
+      id="inicio"
+      class="pt-24 bg-gradient-main text-light py-16 px-6 md:px-12 flex flex-col-reverse md:flex-row items-center justify-between gap-8 bg-[#233750]"
+    >
+      <!-- Elementos decorativos opcionales -->
+      <!-- <div class="absolute top-4 left-4 w-12 h-12 bg-neonGreen rounded-full opacity-20 blur-xl"></div>
         <div class="absolute bottom-6 right-6 w-16 h-16 bg-highlight rounded-full opacity-10 blur-xl"></div> -->
-        
-        <div class="flex-1 text-center md:text-left">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">
-                Hola, soy <span class="text-highlight">Sebastián Alagón</span>
-            </h1>
-            <h2 class="text-2xl md:text-3xl font-semibold text-softGray mb-6 text-white">
-            Desarrollador Full Stack
-            </h2>
-            <!-- <button href="https://github.com/CheSebas" target="_blank" rel="noopener noreferrer" class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out">
+
+      <div class="flex-1 text-center md:text-left">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">
+          Hola, soy <span class="text-highlight">Sebastián Alagón</span>
+        </h1>
+        <h2
+          class="text-2xl md:text-3xl font-semibold text-softGray mb-6 text-white"
+        >
+          Desarrollador Full Stack
+        </h2>
+        <!-- <button href="https://github.com/CheSebas" target="_blank" rel="noopener noreferrer" class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out">
                 <slot part="content">Ver Proyectos</slot>
             </button> -->
-            <a href="https://github.com/CheSebas" target="_blank" rel="noopener noreferrer" class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out">
-                <slot part="content">Ver Proyectos</slot>
-            </a>
-        </div>
+        <a
+          href="https://github.com/CheSebas"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out"
+        >
+          <slot part="content">Ver Proyectos</slot>
+        </a>
+      </div>
 
-        <!-- Imagen -->
-        <!-- <div class="flex-1 flex justify-center">
+      <!-- Imagen -->
+      <!-- <div class="flex-1 flex justify-center">
             <img src="https://media.licdn.com/dms/image/v2/D4D03AQFSRHNYRVC24A/profile-displayphoto-scale_200_200/B4DZfIDv_JGsAc-/0/1751408116619?e=1756944000&v=beta&t=u6jozZJdpsKDjMr8qqDrQOHAPQ4KfERwO03Y7J-kNYU" alt="Foto de Sebastián" class="w-64 h-64 rounded-full shadow-lg object-cover hover:scale-105 transition-transform duration-300">
         </div> -->
-        <div class="flex justify-center">
-            <div class="relative w-64 h-64 imagen-con-borde rounded-full overflow-hidden">
-                <img
-                src="https://media.licdn.com/dms/image/v2/D4D03AQFSRHNYRVC24A/profile-displayphoto-scale_200_200/B4DZfIDv_JGsAc-/0/1751408116619?e=1756944000&v=beta&t=u6jozZJdpsKDjMr8qqDrQOHAPQ4KfERwO03Y7J-kNYU"
-                alt=""
-                class="w-full h-full object-cover rounded-full relative z-10 hover:scale-105 transition-transform duration-300"
-                />
-            </div>
+      <div class="flex justify-center">
+        <div
+          class="relative w-64 h-64 imagen-con-borde rounded-full overflow-hidden"
+        >
+          <img
+            src="https://media.licdn.com/dms/image/v2/D4D03AQFSRHNYRVC24A/profile-displayphoto-scale_200_200/B4DZfIDv_JGsAc-/0/1751408116619?e=1756944000&v=beta&t=u6jozZJdpsKDjMr8qqDrQOHAPQ4KfERwO03Y7J-kNYU"
+            alt=""
+            class="w-full h-full object-cover rounded-full relative z-10 hover:scale-105 transition-transform duration-300"
+          />
         </div>
+      </div>
     </section>
 
     <!-- Sobre Mi -->
-    <section id="sobremi" class="bg-dark text-light py-20 px-6 md:px-12 text-center relative bg-[#233750]">
-        <!-- División entre secciones -->
-        <div class="w-full py-6 flex justify-center bg-[#233750]">
-            <img src="https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/blt58a347b3c468dc62/6614a5791b4724c4502d764e/section_divider_desktop_1.webp?auto=webp" alt="División decorativa" class="w-full h-auto transition-transform duration-500 hover:scale-105">
-        </div>
-        
-        <!-- Elementos decorativos opcionales
+    <section
+      id="sobremi"
+      class="bg-dark text-light py-20 px-6 md:px-12 text-center relative bg-[#233750]"
+    >
+      <!-- División entre secciones -->
+      <div class="w-full py-6 flex justify-center bg-[#233750]">
+        <img
+          src="https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/blt58a347b3c468dc62/6614a5791b4724c4502d764e/section_divider_desktop_1.webp?auto=webp"
+          alt="División decorativa"
+          class="w-full h-auto transition-transform duration-500 hover:scale-105"
+        />
+      </div>
+
+      <!-- Elementos decorativos opcionales
         <div class="absolute top-4 left-4 w-12 h-12 bg-neonGreen rounded-full opacity-20 blur-xl"></div>
         <div class="absolute bottom-6 right-6 w-16 h-16 bg-highlight rounded-full opacity-10 blur-xl"></div> -->
 
-        <!-- Contenido principal -->
-        <h2 class="text-4xl md:text-5xl font-bold text-highlight mb-6 text-white">¿Quién Soy?</h2>
-        <p class="text-softGray max-w-3xl mx-auto text-lg leading-relaxed text-[#CCE6FF]">
-            Soy un desarrollador Full Stack apasionado por crear aplicaciones web modernas, intuitivas y funcionales.
-            Disfruto resolver problemas con código limpio y eficiente. Me especializo en tecnologías como <span class="text-light font-medium">JavaScript, React, Node.js y TailwindCSS</span>.
-            En mi tiempo libre, me gusta jugar videojuegos, aprender nuevas herramientas y leer sobre desarrollo personal y tecnología.
-        </p>
+      <!-- Contenido principal -->
+      <h2 class="text-4xl md:text-5xl font-bold text-highlight mb-6 text-white">
+        ¿Quién Soy?
+      </h2>
+      <p
+        class="text-softGray max-w-3xl mx-auto text-lg leading-relaxed text-[#CCE6FF]"
+      >
+        Soy un desarrollador Full Stack apasionado por crear aplicaciones web
+        modernas, intuitivas y funcionales. Disfruto resolver problemas con
+        código limpio y eficiente. Me especializo en tecnologías como
+        <span class="text-light font-medium"
+          >JavaScript, React, Node.js y TailwindCSS</span
+        >. En mi tiempo libre, me gusta jugar videojuegos, aprender nuevas
+        herramientas y leer sobre desarrollo personal y tecnología.
+      </p>
 
-        <!-- Botón -->
-        <div class="mt-8">
-            <!-- <button class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out">
+      <!-- Botón -->
+      <div class="mt-8">
+        <!-- <button class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out">
                 <slot part="content">Ver mis Proyectos</slot>
             </button> -->
-            <a href="https://github.com/CheSebas" class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out">
-                <slot part="content">Ver mis Proyectos</slot>
-            </a>
+        <a
+          href="./Projects/projects.html"
+          class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out"
+        >
+          <slot part="content">Ver mis Proyectos</slot>
+        </a>
+      </div>
 
-        </div>
-
-        <!-- División entre secciones -->
-        <div class="w-full py-6 flex justify-center bg-[#233750]">
-            <img src="https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/bltc4f8f0164464b51a/6614a5792829dd1383e9d163/section_divider_desktop_2.webp?auto=webp" alt="División decorativa" class="w-full h-auto transition-transform duration-500 hover:scale-105">
-        </div>
+      <!-- División entre secciones -->
+      <div class="w-full py-6 flex justify-center bg-[#233750]">
+        <img
+          src="https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/bltc4f8f0164464b51a/6614a5792829dd1383e9d163/section_divider_desktop_2.webp?auto=webp"
+          alt="División decorativa"
+          class="w-full h-auto transition-transform duration-500 hover:scale-105"
+        />
+      </div>
     </section>
 
     <!-- Habilidades -->
-    <section id="habilidades" class="bg-deepBlue text-light py-20 px-6 md:px-12 text-center bg-[#233750]">
-        <h2 class="text-4xl md:text-5xl font-bold text-highlight mb-12 text-white">Habilidades</h2>
+    <section
+      id="habilidades"
+      class="bg-deepBlue text-light py-20 px-6 md:px-12 text-center bg-[#233750]"
+    >
+      <h2
+        class="text-4xl md:text-5xl font-bold text-highlight mb-12 text-white"
+      >
+        Habilidades
+      </h2>
 
-        <!-- Contenedor de íconos -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 max-w-5xl mx-auto text-[#7AA3CD]">
-            <div class="flex flex-col items-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-16 h-16 mb-2" alt="HTML">
-            <span class="text-softGray font-medium">HTML5</span>
-            </div>
-            <div class="flex flex-col items-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-16 h-16 mb-2" alt="CSS">
-            <span class="text-softGray font-medium">CSS3</span>
-            </div>
-            <div class="flex flex-col items-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-16 h-16 mb-2" alt="JavaScript">
-            <span class="text-softGray font-medium">JavaScript</span>
-            </div>
-            <div class="flex flex-col items-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" class="w-16 h-16 mb-2" alt="TailwindCSS">
-            <span class="text-softGray font-medium">TailwindCSS</span>
-            </div>
-            <div class="flex flex-col items-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-16 h-16 mb-2" alt="React">
-            <span class="text-softGray font-medium">React</span>
-            </div>
-            <div class="flex flex-col items-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-16 h-16 mb-2" alt="Node.js">
-            <span class="text-softGray font-medium">Node.js</span>
-            </div>
-            <div class="flex flex-col items-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-16 h-16 mb-2" alt="Git">
-            <span class="text-softGray font-medium">Git</span>
-            </div>
-            <div class="flex flex-col items-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-16 h-16 mb-2 invert" alt="GitHub">
-            <span class="text-softGray font-medium">GitHub</span>
-            </div>
-        </div>
+      <p id="mensaje-carga" class="text-white text-lg mb-6">
+        El contenido dinámico se está cargando...
+      </p>
 
-        <!-- Botón de CV -->
-        <div class="mt-12">
-            <!-- <a href="tu-cv.pdf" download class="inline-block bg-highlight text-dark px-6 py-3 rounded-full font-semibold hover:bg-neonGreen transition duration-300">
-            Descargar CV
-            </a> -->
-            <button class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out">
-                <slot part="content">Descargar CV</slot>
-            </button>
-        </div>
+      <!-- Contenedor dinámico -->
+      <div
+        id="contenedor-habilidades"
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 max-w-5xl mx-auto text-[#7AA3CD]"
+      ></div>
+
+      <!-- Botón de CV -->
+      <div class="mt-12">
+        <button
+          class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out"
+        >
+          Descargar CV
+        </button>
+      </div>
     </section>
 
     <!-- Proyectos -->
-    <section id="proyectos" class="bg-dark text-light py-20 px-6 md:px-12 text-center bg-[#233750]">
-        <!-- División entre secciones -->
-        <div class="w-full py-6 flex justify-center bg-[#233750]">
-            <img src="https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/blt58a347b3c468dc62/6614a5791b4724c4502d764e/section_divider_desktop_1.webp?auto=webp" alt="División decorativa" class="w-full h-auto transition-transform duration-500 hover:scale-105">
+    <section
+      id="proyectos"
+      class="bg-dark text-light py-20 px-6 md:px-12 text-center bg-[#233750]"
+    >
+      <!-- División entre secciones -->
+      <div class="w-full py-6 flex justify-center bg-[#233750]">
+        <img
+          src="https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/blt58a347b3c468dc62/6614a5791b4724c4502d764e/section_divider_desktop_1.webp?auto=webp"
+          alt="División decorativa"
+          class="w-full h-auto transition-transform duration-500 hover:scale-105"
+        />
+      </div>
+
+      <h2
+        class="text-4xl md:text-5xl font-bold text-highlight mb-12 text-white"
+      >
+        Proyectos Destacados
+      </h2>
+
+      <div
+        class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto"
+      >
+        <!-- Proyecto 1 -->
+        <div
+          class="bg-deepBlue rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300"
+        >
+          <img
+            src="https://via.placeholder.com/400x200"
+            alt="Proyecto 1"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4 text-left">
+            <h3 class="text-xl font-semibold text-highlight mb-2 text-white">
+              Portafolio Personal
+            </h3>
+            <p class="text-softGray mb-4 text-[#CCE6FF]">
+              Diseño moderno para presentar mis habilidades y proyectos.
+            </p>
+            <a
+              href="https://github.com/tuusuario/portafolio"
+              target="_blank"
+              class="text-neonGreen font-semibold hover:underline text-[#7AA3CD]"
+              >Ver en GitHub</a
+            >
+          </div>
         </div>
 
-        <h2 class="text-4xl md:text-5xl font-bold text-highlight mb-12 text-white">Proyectos Destacados</h2>
-
-        <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-            <!-- Proyecto 1 -->
-            <div class="bg-deepBlue rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img src="https://via.placeholder.com/400x200" alt="Proyecto 1" class="w-full h-48 object-cover">
-            <div class="p-4 text-left">
-                <h3 class="text-xl font-semibold text-highlight mb-2 text-white">Portafolio Personal</h3>
-                <p class="text-softGray mb-4 text-[#CCE6FF]">Diseño moderno para presentar mis habilidades y proyectos.</p>
-                <a href="https://github.com/tuusuario/portafolio" target="_blank" class="text-neonGreen font-semibold hover:underline text-[#7AA3CD]">Ver en GitHub</a>
-            </div>
-            </div>
-
-            <!-- Proyecto 2 -->
-            <div class="bg-deepBlue rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img src="https://via.placeholder.com/400x200" alt="Proyecto 2" class="w-full h-48 object-cover">
-            <div class="p-4 text-left">
-                <h3 class="text-xl font-semibold text-highlight mb-2 text-white">App de Tareas</h3>
-                <p class="text-softGray mb-4 text-[#CCE6FF]">CRUD completo con autenticación y base de datos.</p>
-                <a href="https://github.com/tuusuario/todo-app" target="_blank" class="text-neonGreen font-semibold hover:underline text-[#7AA3CD]">Ver en GitHub</a>
-            </div>
-            </div>
-
-            <!-- Proyecto 3 -->
-            <div class="bg-deepBlue rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img src="https://via.placeholder.com/400x200" alt="Proyecto 3" class="w-full h-48 object-cover">
-            <div class="p-4 text-left">
-                <h3 class="text-xl font-semibold text-highlight mb-2 text-white">API REST con Node.js</h3>
-                <p class="text-softGray mb-4 text-[#CCE6FF]">Desarrollo de una API RESTful utilizando Express y MongoDB.</p>
-                <a href="https://github.com/tuusuario/api-node" target="_blank" class="text-neonGreen font-semibold hover:underline text-[#7AA3CD]">Ver en GitHub</a>
-            </div>
-            </div>
+        <!-- Proyecto 2 -->
+        <div
+          class="bg-deepBlue rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300"
+        >
+          <img
+            src="https://via.placeholder.com/400x200"
+            alt="Proyecto 2"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4 text-left">
+            <h3 class="text-xl font-semibold text-highlight mb-2 text-white">
+              App de Tareas
+            </h3>
+            <p class="text-softGray mb-4 text-[#CCE6FF]">
+              CRUD completo con autenticación y base de datos.
+            </p>
+            <a
+              href="https://github.com/tuusuario/todo-app"
+              target="_blank"
+              class="text-neonGreen font-semibold hover:underline text-[#7AA3CD]"
+              >Ver en GitHub</a
+            >
+          </div>
         </div>
 
-        <!-- División entre secciones -->
-        <div class="w-full py-6 flex justify-center bg-[#233750]">
-            <img src="https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/bltc4f8f0164464b51a/6614a5792829dd1383e9d163/section_divider_desktop_2.webp?auto=webp" alt="División decorativa" class="w-full h-auto transition-transform duration-500 hover:scale-105">
+        <!-- Proyecto 3 -->
+        <div
+          class="bg-deepBlue rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300"
+        >
+          <img
+            src="https://via.placeholder.com/400x200"
+            alt="Proyecto 3"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4 text-left">
+            <h3 class="text-xl font-semibold text-highlight mb-2 text-white">
+              API REST con Node.js
+            </h3>
+            <p class="text-softGray mb-4 text-[#CCE6FF]">
+              Desarrollo de una API RESTful utilizando Express y MongoDB.
+            </p>
+            <a
+              href="https://github.com/tuusuario/api-node"
+              target="_blank"
+              class="text-neonGreen font-semibold hover:underline text-[#7AA3CD]"
+              >Ver en GitHub</a
+            >
+          </div>
         </div>
+      </div>
+
+      <!-- División entre secciones -->
+      <div class="w-full py-6 flex justify-center bg-[#233750]">
+        <img
+          src="https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/bltc4f8f0164464b51a/6614a5792829dd1383e9d163/section_divider_desktop_2.webp?auto=webp"
+          alt="División decorativa"
+          class="w-full h-auto transition-transform duration-500 hover:scale-105"
+        />
+      </div>
     </section>
 
     <!-- Formulario de Proyectos -->
-    <section id="contacto" class="bg-deepBlue text-light py-20 px-6 md:px-12 bg-[#233750]">
-        <h2 class="text-4xl md:text-5xl font-bold text-highlight text-center mb-12 text-white">Contáctame</h2>
+    <section
+      id="contacto"
+      class="bg-deepBlue text-light py-20 px-6 md:px-12 bg-[#233750]"
+    >
+      <h2
+        class="text-4xl md:text-5xl font-bold text-highlight text-center mb-12 text-white"
+      >
+        Contáctame
+      </h2>
 
-        <form action="#" method="POST" class="max-w-2xl mx-auto space-y-6 bg-dark p-8 rounded-xl shadow-lg">
-            <!-- Nombre -->
-            <div class="flex flex-col">
-            <label for="nombre" class="mb-2 text-softGray text-sm font-medium text-[#CCE6FF]">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required
-                class="px-4 py-3 bg-deepBlue border border-white rounded-md text-light focus:outline-none focus:ring-2 focus:ring-highlight" />
-            </div>
+      <form
+        action="#"
+        method="POST"
+        class="max-w-2xl mx-auto space-y-6 bg-dark p-8 rounded-xl shadow-lg"
+      >
+        <!-- Nombre -->
+        <div class="flex flex-col">
+          <label
+            for="nombre"
+            class="mb-2 text-softGray text-sm font-medium text-[#CCE6FF]"
+            >Nombre</label
+          >
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            required
+            class="px-4 py-3 bg-deepBlue border border-white rounded-md text-light focus:outline-none focus:ring-2 focus:ring-highlight"
+          />
+        </div>
 
-            <!-- Correo -->
-            <div class="flex flex-col">
-            <label for="correo" class="mb-2 text-softGray text-sm font-medium text-[#CCE6FF]">Correo Electrónico</label>
-            <input type="email" id="correo" name="correo" required
-                class="px-4 py-3 bg-deepBlue border border-white rounded-md text-light focus:outline-none focus:ring-2 focus:ring-highlight" />
-            </div>
+        <!-- Correo -->
+        <div class="flex flex-col">
+          <label
+            for="correo"
+            class="mb-2 text-softGray text-sm font-medium text-[#CCE6FF]"
+            >Correo Electrónico</label
+          >
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            required
+            class="px-4 py-3 bg-deepBlue border border-white rounded-md text-light focus:outline-none focus:ring-2 focus:ring-highlight"
+          />
+        </div>
 
-            <!-- Mensaje -->
-            <div class="flex flex-col">
-            <label for="mensaje" class="mb-2 text-softGray text-sm font-medium text-[#CCE6FF]">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required
-                class="px-4 py-3 bg-deepBlue border border-white rounded-md text-light resize-none focus:outline-none focus:ring-2 focus:ring-highlight"></textarea>
-            </div>
+        <!-- Mensaje -->
+        <div class="flex flex-col">
+          <label
+            for="mensaje"
+            class="mb-2 text-softGray text-sm font-medium text-[#CCE6FF]"
+            >Mensaje</label
+          >
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            rows="4"
+            required
+            class="px-4 py-3 bg-deepBlue border border-white rounded-md text-light resize-none focus:outline-none focus:ring-2 focus:ring-highlight"
+          ></textarea>
+        </div>
 
-            <!-- Botón -->
-            <div class="text-center">
-                <!-- <button type="submit"
+        <!-- Botón -->
+        <div class="text-center">
+          <!-- <button type="submit"
                     class="bg-highlight text-dark px-8 py-3 rounded-full font-semibold hover:bg-neonGreen transition duration-300">
                     Enviar Mensaje
                 </button> -->
-                <button class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out">
-                    <slot part="content">Enviar Mensaje</slot>
-                </button>
-            </div>
-        </form>
+          <button
+            class="relative px-6 py-2 border-2 border-blue-500 text-blue-400 font-extrabold text-xl tracking-wider bg-[#0A0F1C] rounded-md shadow-[0_0_10px_#1e3a8a] hover:shadow-[0_0_25px_#3b82f6] hover:border-blue-300 hover:text-white transition duration-300 ease-in-out"
+          >
+            <slot part="content">Enviar Mensaje</slot>
+          </button>
+        </div>
+      </form>
     </section>
 
     <!-- Footer -->
     <footer class="bg-deepBlue text-softGray py-6 px-6 md:px-12 bg-[#010E1E]">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-white">
-            <p class="text-center md:text-left text-sm">
-                2025 Sebastián Alagón. Todos los derechos reservados.
-            </p>
+      <div
+        class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-white"
+      >
+        <p class="text-center md:text-left text-sm">
+          2025 Sebastián Alagón. Todos los derechos reservados.
+        </p>
 
-            <div class="flex space-x-4">
-                <a href="https://github.com/CheSebas" target="_blank" class="hover:text-highlight transition">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/sebastianalagonjara" target="_blank" class="hover:text-highlight transition">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
+        <div class="flex space-x-4">
+          <a
+            href="https://github.com/CheSebas"
+            target="_blank"
+            class="hover:text-highlight transition"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/sebastianalagonjara"
+            target="_blank"
+            class="hover:text-highlight transition"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
         </div>
+      </div>
     </footer>
-
-    <!-- Script para mostrar menú -->
-    <script>
-        const toggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('mobile-menu');
-
-        toggle.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
-
-
-
-</body>
+  </body>
 </html>
