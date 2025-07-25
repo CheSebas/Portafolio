@@ -5,28 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects</title>
     <link rel="stylesheet" href="../src/output.css" />
-    <script src="main.js" defer></script>
-    <script src="projects.js" defer></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="main.js" type="module" defer></script>
   </head>
-  <body class="bg-[#121212] text-white">
-    <!-- Header simple con botón de regreso -->
+  <body>
+    <!-- Header -->
     <header
-      class="bg-[#202020] px-6 py-4 flex justify-between items-center shadow-md"
+      class="fixed top-0 left-0 w-full z-50 bg-dark text-light px-6 py-4 flex justify-between items-center shadow-md bg-[#202020] text-white"
     >
       <h1 class="text-xl font-bold text-highlight">Proyectos</h1>
+
       <a
         href="../index.html"
-        class="text-sm text-highlight underline hover:opacity-80"
-        >← Volver al inicio</a
+        class="text-sm px-3 py-2 rounded-md transition duration-300 bg-transparent hover:bg-white/10 hover:text-highlight underline"
       >
+        Volver al inicio
+      </a>
+
+      <!-- Divider -->
+      <div class="absolute bottom-0 left-0 w-full">
+        <img
+          src="https://blz-contentstack-images.akamaized.net/v3/assets/blt0e00eb71333df64e/blt83b52952c704ce74/657ee15c21f66050c9478884/section_divider.webp?auto=webp"
+          alt=""
+          class="w-full h-[16px] object-cover pointer-events-none select-none"
+        />
+      </div>
     </header>
 
-    <!-- Contenedor de proyectos -->
-    <main class="p-6">
-      <div
-        id="contenedor-proyectos"
-        class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-      ></div>
+    <!-- Main content -->
+    <main class="px-6 pb-16 pt-30 bg-[#233750]">
+      <section
+        class="bg-dark text-light py-20 px-6 md:px-12 text-center relative bg-[#233750]"
+      >
+        <h2
+          class="text-4xl md:text-5xl font-bold text-highlight mb-6 text-white"
+        >
+          Mis Proyectos
+        </h2>
+        <div
+          id="contenedor-proyectos"
+          class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-20"
+        ></div>
+      </section>
     </main>
+
+    <!-- Footer -->
+    <footer class="bg-deepBlue text-softGray py-6 px-6 md:px-12 bg-[#010E1E]">
+      <div
+        class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-white"
+      >
+        <p class="text-center md:text-left text-sm">
+          2025 Sebastián Alagón. Todos los derechos reservados.
+        </p>
+
+        <div class="flex space-x-4">
+          <a
+            href="https://github.com/CheSebas"
+            target="_blank"
+            class="hover:text-highlight transition"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/sebastianalagonjara"
+            target="_blank"
+            class="hover:text-highlight transition"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

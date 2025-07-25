@@ -1,4 +1,4 @@
-const habilidades = [
+export const habilidades = [
   {
     nombre: "HTML5",
     nivel: "Avanzado",
