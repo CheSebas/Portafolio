@@ -96,31 +96,70 @@ proyectos.forEach((proyecto) => {
 });
 
 // Formulario Contacto
-document
-  .getElementById("formulario-contacto")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
 
-    const nombre = document.getElementById("nombre").value.trim();
-    const correo = document.getElementById("correo").value.trim();
-    const mensaje = document.getElementById("mensaje").value.trim();
-    const feedback = document.getElementById("feedback");
+// document
+//   .getElementById("formulario-contacto")
+//   .addEventListener("submit", function (e) {
+//     e.preventDefault();
 
-    if (!nombre || !correo || !mensaje) {
-      feedback.textContent = "⚠️ Por favor completa todos los campos.";
-      feedback.classList.remove("text-green-400");
-      feedback.classList.add("text-red-400");
-      return;
-    }
+//     const nombre = document.getElementById("nombre").value.trim();
+//     const correo = document.getElementById("correo").value.trim();
+//     const mensaje = document.getElementById("mensaje").value.trim();
+//     const feedback = document.getElementById("feedback");
 
-    feedback.textContent = "⏳ Enviando mensaje...";
-    feedback.classList.remove("text-red-400");
-    feedback.classList.add("text-blue-400");
+//     if (!nombre || !correo || !mensaje) {
+//       feedback.textContent = "⚠️ Por favor completa todos los campos.";
+//       feedback.classList.remove("text-green-400");
+//       feedback.classList.add("text-red-400");
+//       return;
+//     }
 
-    // Simulación de envío
-    setTimeout(() => {
+//     feedback.textContent = "⏳ Enviando mensaje...";
+//     feedback.classList.remove("text-red-400");
+//     feedback.classList.add("text-blue-400");
+
+//     // Simulación de envío
+//     setTimeout(() => {
+//       feedback.textContent = "✅ ¡Mensaje enviado con éxito!";
+//       feedback.classList.remove("text-blue-400");
+//       feedback.classList.add("text-green-400");
+//     }, 1000);
+//   });
+
+
+// Inicializar EmailJS
+
+emailjs.init("yaYa2D8dwUUqILdTJ");
+
+const form = document.getElementById("formulario-contacto-form");
+const feedback = document.getElementById("feedback");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const nombre = form.nombre.value.trim();
+  const correo = form.correo.value.trim();
+  const mensaje = form.mensaje.value.trim();
+
+  if (!nombre || !correo || !mensaje) {
+    feedback.textContent = "⚠️ Por favor completa todos los campos.";
+    feedback.className = "text-red-400 mt-4";
+    return;
+  }
+
+  feedback.textContent = "⏳ Enviando mensaje...";
+  feedback.className = "text-blue-400 mt-4";
+
+  emailjs
+    .sendForm("service_qumew5m", "template_k7jay88", form)
+    .then(() => {
       feedback.textContent = "✅ ¡Mensaje enviado con éxito!";
-      feedback.classList.remove("text-blue-400");
-      feedback.classList.add("text-green-400");
-    }, 1000);
-  });
+      feedback.className = "text-green-400 mt-4";
+      form.reset();
+    })
+    .catch(() => {
+      feedback.textContent =
+        "❌ Error al enviar el mensaje. Intenta más tarde.";
+      feedback.className = "text-red-400 mt-4";
+    });
+});
