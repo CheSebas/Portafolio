@@ -1,4 +1,5 @@
 import { habilidades } from "./skills.js";
+import { proyectos } from "./Projects/projects.js";
 
 // Habilidades
 function renderHabilidades() {
@@ -58,6 +59,40 @@ document.addEventListener("DOMContentLoaded", () => {
   toggle.addEventListener("click", () => {
     menu.classList.toggle("hidden");
   });
+});
+
+// Proyectos Destacados
+const contenedor = document.getElementById("proyectos-destacados");
+
+proyectos.forEach((proyecto) => {
+  const card = document.createElement("div");
+  card.className =
+    "bg-deepBlue rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300";
+
+  card.innerHTML = `
+    <img
+      src="${proyecto.imagen}"
+      alt="${proyecto.titulo}"
+      class="w-full h-48 object-cover"
+    />
+    <div class="p-4 text-left">
+      <h3 class="text-xl font-semibold text-highlight mb-2 text-white">
+        ${proyecto.titulo}
+      </h3>
+      <p class="text-softGray mb-4 text-[#CCE6FF]">
+        ${proyecto.descripcion}
+      </p>
+      <a
+        href="${proyecto.enlace}"
+        target="_blank"
+        class="text-neonGreen font-semibold hover:underline text-[#7AA3CD]"
+      >
+        Ver en GitHub
+      </a>
+    </div>
+  `;
+
+  contenedor.appendChild(card);
 });
 
 // Formulario Contacto
